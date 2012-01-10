@@ -1,0 +1,121 @@
+/*
+  Place all the styles related to the matching controller here.
+
+input.text, input.email, input.password, textarea.uniform { font-weight: normal; font-size: 14px; padding: 5px 10px 6px;
+    background: url("/images/layout/uniform/bg-input-focus.png") repeat-x 0px 0px;
+    background: white url("/images/layout/uniform/bg-input.png") repeat-x 0px 0px;
+    border-top: solid 1px #aaaaaa; border-left: solid 1px #aaaaaa; border-bottom:
+    solid 1px #cccccc; border-right: solid 1px #cccccc; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; outline: 0; line-height: 1.25; }
+          They will automatically be included in application.css.
+*/
+
+.message {
+        position: relative;
+        margin: 0 0 10px -10px;
+        border-bottom: 1px solid white;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        padding: 10px;
+        background: #444;
+        line-height: 1.5;
+        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
+        -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
+        text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.25) inset;
+        color: white;
+}
+ .message.error {
+    background: #910F0F;
+    color: white;
+}
+
+ fieldset.generic{
+		border: 1px solid #f8b720;
+		padding: 10px 20px 10px 20px;
+		margin-top:15px;
+		margin-bottom:15px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+}
+.generic legend{
+    color: #F8B720;
+font-family: 'Droid Sans', Verdana, Arial, Helvetica, sans-serif;
+font-size: 19px;
+font-weight: 400;
+padding: 0px 10px;
+}
+.generic p{
+		color: white;
+        font-size: 16px;
+}
+.generic table {
+margin-bottom: 18px;
+border-collapse: collapse;
+border-spacing: 0;
+border: 1px solid #D9D9D9;
+background: #D9D9D9;
+background: -moz-linear-gradient(top, #E6E6E6, #D9D9D9);
+background: -webkit-gradient(linear, left top, left bottom, from(#E6E6E6), to(#D9D9D9));
+width: 100%;
+empty-cells: show;
+}
+.generic table, caption, thead, tbody, tfoot, tr, th, td {
+margin: 0;
+padding: 0;
+vertical-align: baseline;
+border: 0;
+}
+
+.generic thead {
+display: table-header-group;
+vertical-align: middle;
+border-color: inherit;
+}
+
+.generic table thead th {
+    background: #D9D9D9;
+    color:rgb(68, 68, 68);
+    font-family: 'Droid Sans', Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    background: -moz-linear-gradient(top, #E6E6E6, #D9D9D9);
+    background: -webkit-gradient(linear, left top, left bottom, from(#E6E6E6), to(#D9D9D9));
+}
+
+.generic table th, table td {
+padding: 6px 9px;
+border: 1px solid #D2D2D2;
+vertical-align: middle;
+    font-family: 'Droid Sans', Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+text-align: left;
+}
+
+.generic .bot{
+        cursor:pointer;
+		background-color: #42a129;
+		background-image: url(bkg-bot.jpg);
+		background-position: 0% 0%;
+		background-repeat: repeat-x;
+		color:#ffffff;
+		font-family: 'Droid Sans', Verdana, Arial, Helvetica, sans-serif;
+		font-size:15px;
+		font-weight:700;
+		padding: 4px 20px;
+		text-align:center;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+		border:none;
+		margin-bottom:5px;
+		letter-spacing:2px;
+		font-weight:700;
+		width:50%;
+}

@@ -1,0 +1,425 @@
+# Italian translations for Ruby on Rails
+#
+# Contributors:
+# - Claudio Poli (masterkain@gmail.com)
+# - Simone Carletti (weppos@weppos.net)
+# - Davide Guerri (d.guerri@caspur.it)
+
+it:
+  access_admin: area admin
+  your_shopper: la tua shopper
+  producte: prodotti
+  menu_vetrina: "Vetrina"
+  menu_account: "il mio account"
+  menu_help: "aiuto"
+  menu_blog: "blog"
+  menu_invite: "invita un amico"
+  homepage: "YAYO.com - home page"
+  profile_welcome: "Ciao"
+  profile_change: "modifica il tuo profilo"
+  confirmation_instructions: Istruzioni per attivare il suo account
+  confirmation_instructions_desc: Le istruzioni per attivare il suo account sono state inviate alla casella di posta indicata.
+  password_reset_instructions: Informazioni per cambio password
+  registration_title: Registrati subito, è gratis!
+  registration_subtitle: Un milione e messo di italiani sono con noi, non puoi mancare.
+  registration_info: Compila i seguenti campi.
+  registration_terms: "Lorem ipsum dolor sit amet, nec ad magna labore. Nec erat verterem menandri ea. Sit hinc viris cu, sit sumo urbanitas tincidunt cu. Omnis affert populo in quo, vim nullam equidem moderatius an, at populo posidonium necessitatibus nam.
+  Quo decore electram ut, no nam eius alterum accusamus, scripta maluisset neglegentur ut ius. Appetere voluptaria qui ad, omittam pericula adipiscing ne has, sed ad dolore posidonium. Oratio gubergren te mel, amet fabellas scribentur ei quo. Duis quas ullamcorper pro te, ut mutat blandit vel. Voluptua facilisi tacimates usu ut, ei has facete fabellas conclusionemque."
+  registration_accept: "Accettazione Privacy e Condizioni"
+  registration_approve: "Dichiaro di avere letto e di accettare le Condizioni Generali di Vendita di YAYO.com e di aver preso visione dell'Informativa sulla Privacy."
+  registration_terms_required: "E' obbligatorio accettare le condizioni generali di vendita"
+  social_access: "Accedi tramite %{provider}"
+  editing_welcome_page: Gestione Welcome Page
+  welcome_page: Welcome Page
+  home_resources: Welcome e Banner
+  claim: Claim
+  background: Immagine di Sfondo
+  logo: Immagine Logo
+  iconic: Immagine Promozionale
+  publish: Pubblica
+  leaderboard: Banner Leaderboard
+  wp_upload_action: Seleziona un'immagine dal tuo computer (massimo %{size})
+  wp_content_type: I formati supportati per questa sezione sono %{content}
+  wp_no_image: Nessuna immagine specificata
+  wp_reset_image: Resetta Immagine
+  wp_online: Welcome Page Pubblicata
+  wp_confirm: Confermare l'operazione
+  wp_register_now: Registrati subito, è gratis!
+  cms:
+    published: Pubblicato
+    tags: Tema
+    title: Titolo
+    date: Data
+    excerpt: Estratto
+    permalink: link permanente
+    body: Articolo
+    status: Stato
+    publis: Pubblicato
+    draft: Bozza
+    comment_status: Status Commenti
+    tags_hint: Separa i temi con una virgola
+    new_post: Nuovo Articolo
+    show_only_published_posts: solo pubblicati
+    published_date_range: Data pubblicazione
+    meta_keywords: Keyword Metadati
+    meta_description: Descrizione Metadati
+
+  invitation:
+    sent: Email di invito inviata al tuo amico!
+    info: Informazioni sull'invio , etc..  accredito etc
+  flash:
+   image_not_correct_content_type: il formato dell'immagine non è corretto
+   image_size: l'immagine non può superare i %{size}
+   image_mandatory: l'immagine è obbligatoria
+   wponline: Welcome Page Pubblicata!
+  devise:
+    failure:
+      unauthenticated: 'Devi effettuare la login prima di accedere.'
+      unconfirmed: 'E necessario confermare il proprio account prima di continuare.'
+      locked: 'Il tuo account è bloccato.'
+      invalid: 'Email o Password non validi.'
+      invalid_token: 'Token autenticazione non valido.'
+      timeout: 'La sesisone è terminata, effettua la login per continuare.'
+      inactive: 'IL tuo account non è ancora attivo.'
+    passwords:
+      send_instructions: 'Riceverai una email conenente le istruzioni per reimpostare la tua password nel giro di pochi minuti.'
+      updated: 'Password cambiata correttamente. Sei loggato.'
+      updated_not_active: 'Password aggiornata.'
+      send_paranoid_instructions: "Se la tua email esiste nel nostro database, riceverai un link per recuperare la password"
+    confirmations:
+      send_instructions: 'Riceverai un email per attivare il tuo account nel giro di pochi minuti.'
+      send_paranoid_instructions: 'Se la tua email esiste nel nostro database, riceverai un link per attivare il tuo account nel giro di pochi minuti.'
+      confirmed: 'Il tuo account è stato confermato. Sei stato loggato.'
+    registrations:
+      signed_up: 'Welcome! You have signed up successfully.'
+      inactive_signed_up: 'You have signed up successfully. However, we could not sign you in because your account is %{reason}.'
+      updated: 'You updated your account successfully.'
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+      reasons:
+        inactive: 'inactive'
+        unconfirmed: 'unconfirmed'
+        locked: 'locked'
+    unlocks:
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
+    omniauth_callbacks:
+      success: 'Successfully authorized from %{kind} account.'
+      failure: 'Could not authorize you from %{kind} because "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Istruzioni per Attivare il tuo Account'
+      reset_password_instructions:
+        subject: 'Istruzioni per Reimpostare la tua Password'
+      unlock_instructions:
+        subject: 'Unlock Instructions'
+  articles: Notizie in Evidenza
+  forgot_password_desc: Inserisci il tuo indirizzo email e riceverai le istruzioni per cambiare la tua password nella tua casella di posta elettronica
+  forgot_password: dimenticata la password?
+  forgot_password_title: Hai dimenticato la tua password ?
+  forgot_password_send: richiedi
+  forgot_password_sent: Le istruzioni sono state inviate
+  forgot_password_sent_desc: Controlla la tua casella email.
+  forgot_password_not_present: L'email indicata non è presente nel nostro archivio
+  remember_me: Ricordati di me
+  login_in: Entra
+  activerecord:
+    attributes:
+      home_resource:
+        iconic: Immagine Claim
+        title: Claim
+        updated_at: Ultimo Aggiornamento
+  post: Post
+  posts: YAYO Experience
+  page: Page
+  pages: Pages
+  recent_posts: Recent Posts
+  cms:
+      date: Date
+      published_date_range: Published Date Range
+      show_only_published_pages: Show Only Published Pages
+      show_only_published_posts: Show Only Published Posts
+      editing_post: Editing Post
+      editing_page: Editing Page
+      comma_separated: Comma Separated
+      select_author: Select Author
+      comment: Comment
+      comments: Comments
+      comments_closed: Comments are closed
+      recent_posts: Recent Posts
+      new_post: New Post
+      view: View
+      title: Title
+      permalink: Permalink
+      body: Body
+      excerpt: Excerpt
+      author: Author
+      publish_post: Publish Post
+      comment_status: Comment Status
+      status: Status
+      metadata: Metadata
+      meta_keywords: Meta Keywords
+      meta_description: Meta Description
+      tags: Tags
+      tags_hint: Enter tags separated by a comma
+      settings: Blog Settings
+      permalink: Slug used in url to blog home
+      posts_per_page: Posts displayed on blog home
+      posts_recent: Posts listed in recent post lists
+      post_status_default: Status default for new posts
+      page_status_default: Status default for new pages
+      post_comment_default: Comment status default for new posts
+      publish: Publish
+      published: Published
+      draft: Draft
+      open: Open
+      closed: Closed
+      view_blog: View Blog
+      blog: Blog
+      comments_for: comments for
+      recent: Recent
+      no_posts_found: No posts found
+      new_page: New Page
+  errors:
+      messages:
+        could_not_create_taxon: "Impossibile creare taxon"
+        no_shipping_methods_available: "Nessun metodo di invio disponibile per la località, Cambia indirizzo e riprova."
+  errors_prohibited_this_record_from_being_saved:
+      one: "1 errore ha bloccato il salvataggio del record"
+      other: "%{count} errori hanno bloccato il salvataggio del record"
+  there_were_problems_with_the_following_fields: "Sono stati riscontrati problemi nei seguenti campi"
+  #there_were_problems_with_the_following_fields: ""
+  number:
+    format:
+      delimiter: ","
+      precision: 2
+      significant: false
+      strip_insignificant_zeros: false
+      separator: "."
+
+    currency:
+      format:
+        format: "%n %u"
+        unit: "€"
+        separator: "."
+        delimiter: ","
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+
+    percentage:
+      format:
+        delimiter: ""
+        # precision:
+
+    precision:
+      format:
+        # separator:
+        delimiter: ""
+        # precision:
+
+    human:
+      format:
+        # separator:
+        delimiter: ""
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "Byte"
+            other: "Byte"
+          kb: "Kb"
+          mb: "Mb"
+          gb: "Gb"
+          tb: "Tb"
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: "Mila"
+          million: "Milioni"
+          billion: "Miliardi"
+          trillion: "Bilioni"
+          quadrillion: "Biliardi"
+
+  date:
+    formats:
+      default: "%d-%m-%Y"
+      short: "%d %b"
+      long: "%d %B %Y"
+
+    day_names:
+      - Domenica
+      - Lunedì
+      - Martedì
+      - Mercoledì
+      - Giovedì
+      - Venerdì
+      - Sabato
+    abbr_day_names:
+      - Dom
+      - Lun
+      - Mar
+      - Mer
+      - Gio
+      - Ven
+      - Sab
+
+    month_names:
+      - ~
+      - Gennaio
+      - Febbraio
+      - Marzo
+      - Aprile
+      - Maggio
+      - Giugno
+      - Luglio
+      - Agosto
+      - Settembre
+      - Ottobre
+      - Novembre
+      - Dicembre
+    abbr_month_names:
+      - ~
+      - Gen
+      - Feb
+      - Mar
+      - Apr
+      - Mag
+      - Giu
+      - Lug
+      - Ago
+      - Set
+      - Ott
+      - Nov
+      - Dic
+    order:
+      - :day
+      - :month
+      - :year
+
+  time:
+    formats:
+      default: "%a %d %b %Y, %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%d %B %Y %H:%M"
+    am: 'am'
+    pm: 'pm'
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "mezzo minuto"
+      less_than_x_seconds:
+        one:  "meno di un secondo"
+        other: "meno di %{count} secondi"
+      x_seconds:
+        one:  "1 secondo"
+        other: "%{count} secondi"
+      less_than_x_minutes:
+        one:  "meno di un minuto"
+        other: "meno di %{count} minuti"
+      x_minutes:
+        one:  "1 minuto"
+        other: "%{count} minuti"
+      about_x_hours:
+        one:  "circa un'ora"
+        other: "circa %{count} ore"
+      x_days:
+        one:  "1 giorno"
+        other: "%{count} giorni"
+      about_x_months:
+        one:  "circa un mese"
+        other: "circa %{count} mesi"
+      x_months:
+        one:  "1 mese"
+        other: "%{count} mesi"
+      about_x_years:
+        one:  "circa un anno"
+        other: "circa %{count} anni"
+      over_x_years:
+        one:  "oltre un anno"
+        other: "oltre %{count} anni"
+      almost_x_years:
+        one:   "circa 1 anno"
+        other: "circa %{count} anni"
+    prompts:
+      year:   "Anno"
+      month:  "Mese"
+      day:    "Giorno"
+      hour:   "Ora"
+      minute: "Minuto"
+      second: "Secondi"
+
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " e "
+      last_word_connector: " e "
+
+    select:
+      prompt: "Per favore, seleziona"
+
+  helpers:
+    select:
+      prompt: "Per favore, seleziona"
+
+    submit:
+      create: 'Crea %{model}'
+      update: 'Aggiorna %{model}'
+      submit: 'Invia %{model}'
+
+  errors:
+      format: "%{attribute} %{message}"
+
+      messages: &errors_messages
+        inclusion: "non è incluso nella lista"
+        exclusion: "è riservato"
+        invalid: "non è valido"
+        confirmation: "non coincide con la conferma"
+        accepted: "deve essere accettata"
+        empty: "non può essere vuoto"
+        blank: "non può essere lasciato in bianco"
+        too_long:
+          one: "è troppo lungo (il massimo è 1 carattere)"
+          other: "è troppo lungo (il massimo è %{count} caratteri)"
+        too_short:
+          one:  "è troppo corto (il minimo è 1 carattere)"
+          other:  "è troppo corto (il minimo è %{count} caratteri)"
+        wrong_length:
+          one: "è della lunghezza sbagliata (deve essere di 1 carattere)"
+          other: "è della lunghezza sbagliata (deve essere di %{count} caratteri)"
+        not_a_number: "non è un numero"
+        not_an_integer: "non è un intero"
+        greater_than: "deve essere superiore a %{count}"
+        greater_than_or_equal_to: "deve essere superiore o uguale a %{count}"
+        equal_to: "deve essere uguale a %{count}"
+        less_than: "deve essere meno di %{count}"
+        less_than_or_equal_to: "deve essere meno o uguale a %{count}"
+        odd: "deve essere dispari"
+        even: "deve essere pari"
+        taken: "è già in uso"
+        record_invalid: "Validazione fallita: %{errors}"
+
+  activerecord:
+    attributes:
+      user:
+        accept_terms_and_privacy: Condizioni Generali di Vendita e Privacy
+    errors:
+      template:
+        header:
+          one: "Non posso salvare questo %{model}: 1 errore"
+          other: "Non posso salvare questo %{model}: %{count} errori."
+        body: "Per favore ricontrolla i seguenti campi:"
+      models:
+        user:
+          attributes:
+            email:
+              not_found: "L'email non è associata ad alcun account"
+      messages:
+        <<: *errors_messages
+
+      full_messages:
+        format: "%{attribute} %{message}"

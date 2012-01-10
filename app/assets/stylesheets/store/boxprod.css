@@ -1,0 +1,235 @@
+.big .boxprod {
+	width:224px;
+	height:290px;
+	margin:10px 10px 0px 0px;
+}
+
+.small .boxprod {
+	width:132px;
+	height:172px;
+	margin:10px 8px 0px 0px;
+}
+
+.boxprod {
+	font-family: 'Droid Sans', Verdana, Arial, Helvetica, sans-serif;
+	color:#d1d1d1;
+	position:relative;
+	background-color: #252525;
+	background-image: url(../img/rigatino.png);
+	background-position: 0% 0%;
+	background-repeat: repeat;
+	overflow:hidden;
+	float:left;
+}
+
+.boxprod .image{
+	position:relative;
+	overflow:hidden;
+	height:200px;
+}
+
+.boxprod .image img{
+	width:auto;
+	height:200px;
+	display:block;
+}
+
+.small .boxprod .image{
+	height:120px;
+}
+
+.small .boxprod .image img{
+	height:120px;
+}
+
+.boxprod .new{
+	position:absolute;
+	z-index:40;
+	right:0px;
+	top:0px;
+}
+
+.boxprod h2{
+	font-weight:700;
+	text-transform:uppercase;
+}
+
+.boxprod .price{
+	font-size:12px;
+	font-weight:400;
+	padding:0px 10px;
+}
+
+.boxprod .price span{
+	font-size:11px;
+	color:#9b9b9b;
+	text-decoration:line-through;
+}
+
+.boxprod .tools {
+	position:absolute;
+	z-index:50;
+	left:0px;
+	bottom:0px;
+	width:100%;
+	height:26px;
+}
+
+.boxprod .tools a.bot, .boxprod .tools a.bot:visited{
+	position:absolute;
+	z-index:50;
+	right:5px;
+	bottom:0px;
+	display:block;
+	color:#ffffff;
+	width:65px;
+	height:22px;
+	text-align:center;
+	padding-top:4px;
+	font-size:10px;
+	font-weight:700;
+	background-image: url(../img/base-bot-1.png);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+.boxprod .tools form{
+	position:absolute;
+	z-index:50;
+	left:5px;
+	bottom:8px;
+	display:block;
+	color:#ffffff;
+	width:65px;
+	font-size:10px;
+	font-weight:7400;
+}
+
+.boxprod .tools form select{
+	border:none;
+	color:#ffffff;
+	background-color:#555555;
+}
+
+.small .boxprod .price, .small .boxprod .tools {
+	display:none;
+}
+
+.big .boxprod h2{
+	font-size:15px;
+	padding:6px 10px 1px 10px ;
+}
+
+.small .boxprod h2{
+	font-size:11px;
+	padding:3px 5px 1px 5px ;
+}
+
+
+.vetrina {
+	font-family: 'Droid Sans', Verdana, Arial, Helvetica, sans-serif;
+		float:left;
+		color:#d1d1d1;
+		position:relative;
+		background-color: #252525;
+		background-image: url(../img/rigatino.png);
+		background-position: 0% 0%;
+		background-repeat: repeat;
+		padding:15px;
+		margin:10px 0px 20px 0px;
+		width:674px;
+}
+
+.vetrina .dettagli{
+		position:relative;
+		float:left;
+		margin:0px 0px 0px 0px;
+		width:243px;
+}
+
+.vetrina .foto{
+		position:relative;
+		float:left;
+		margin:0px 15px 0px 0px;
+		width:416px;
+}
+
+.disp{
+		font-size:13px;
+		font-weight:700;
+		color:#45ae33;
+		padding:5px 10px;
+		background-color:#000000;
+		margin-bottom:10px;
+}
+
+
+
+.dettagli p u{
+		font-size:18px;
+		font-weight:400;
+		display:block;
+		color:#919191;
+		text-decoration:line-through;
+}
+
+.dettagli p em{
+		font-size:18px;
+		font-weight:400;
+		color:#dadada;
+		display:block;
+		font-style:normal;
+		margin-bottom:10px;
+}
+
+.dettagli p strong{
+		font-size:28px;
+		font-weight:700;
+		color:#ffffff;
+		display:block;
+		margin-bottom:10px;
+}
+
+.date{
+		font-size:10px;
+		font-weight:400;
+		color:#45ae33;
+		padding:5px 10px;
+		background-color:#000000;
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.dettagli form label{
+		font-size:11px;
+		font-weight:400;
+		color:#dadada;
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		display:block;
+		margin-top:10px;
+		margin-bottom:3px;
+}
+
+
+:focus { outline: none; }
+
+.clearfix:after{
+clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden;
+}
+.clearfix{display:block;zoom:1}
+ul#thumblist{display:block;}
+ul#thumblist li{float:left;margin-right:10px;list-style:none;}
+ul#thumblist li a{display:block;border:1px solid #dadada;}
+ul#thumblist li a.zoomThumbActive{ border:1px solid #fff;
+}
+.jqzoom{
+	text-decoration:none;
+	float:left;
+}
+ul#thumblist li img{display:block; width:94px;}
+
+.dettagli form .input {
+	border:none;
+	color:#ffffff;
+	background-color:#555555;
+	padding:3px;
+}

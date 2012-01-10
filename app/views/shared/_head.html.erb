@@ -1,0 +1,33 @@
+    <title>
+
+            <% if content_for?(:title) %>
+                <%=yield :title%>
+            <%else%>
+                 <%=title%>
+            <%end%>
+    </title>
+    <meta http-equiv="Content-type" content="text/html;charset=iso-8859-15">
+	<%== meta_data_tags %>
+    <%= stylesheet_link_tag    "store/all" %>
+    <%= javascript_include_tag "store/all" %>
+    <%= javascript_include_tag "jquery.boxy.js" %>
+    <%= javascript_include_tag "jquery.blockui.js" %>
+
+
+
+    <%= csrf_meta_tags %>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+<!--[if lt IE 9]>
+       <%= stylesheet_link_tag    "ie" %>
+<![endif]-->
+<!--[if lte IE 8]>
+        <%= stylesheet_link_tag    "ie" %>
+<![endif]-->
+
+    <%= yield :head %>
+
+
+
+
+
+

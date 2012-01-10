@@ -1,0 +1,15 @@
+
+
+
+<%= f.inputs do %>
+    <div id="tab-title" class="tabs">
+        <%=f.input  :title,:label=>t(:claim)%>
+    </div>
+
+    <%=render :partial=>"uploadfragment", :locals => { :f => f,:scope=>:background,:size=>"70kb"}%>
+    <%=render :partial=>"uploadfragment", :locals => { :f => f,:scope=>:logo,:size=>"100kb"}%>
+    <%=render :partial=>"uploadfragment", :locals => { :f => f,:scope=>:iconic,:size=>"70kb"}%>
+    <%=render :partial=>"uploadfragment", :locals => { :f => f,:scope=>:leaderboard,:size=>"70kb"}%>
+    <%=render :partial=>"uploadfragment", :locals => { :f => f,:scope=>:head_background,:size=>"20kb"}%>
+
+<% end %>

@@ -1,0 +1,11 @@
+<% AuthenticationMethod.where(:environment => ::Rails.env).each do |user| %>
+  <%= link_to user_authentication_omniauth_authorize_path(user.preferred_provider.to_sym),:style=>"font-size:13px;float:right" do %>
+            <%=t(:social_access,:provider=>user.preferred_provider) if user.active %>
+           <%=  image_tag("store/social/#{user.preferred_provider}_32.png",
+                            :style=>"vertical-align:middle" ,
+                            :size => "32x32",
+                            :alt => "#{user.preferred_provider}") if user.active%>
+
+  <%end%><br>
+<% end %>
+    <br>

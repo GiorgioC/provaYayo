@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=iso-8859-15">
+	<meta name="audience" content="all">
+	<meta name="revisit-after" content="10 days">
+	<meta name="robots" content="follow,index">
+	<meta name="copyright" content="">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta NAME="Author" CONTENT="">
+
+	<meta NAME="Webmaster" CONTENT="">
+	<meta http-equiv="content-language" content="IT">
+    <%= stylesheet_link_tag    "store/all" %>
+    <%= javascript_include_tag "store/all" %>
+    <%= javascript_include_tag "jquery.boxy.js" %>
+    <%= javascript_include_tag "welcomepage.js" %>
+    <%= javascript_include_tag "jquery.blockui.js" %>
+    <%= csrf_meta_tags %>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+<!--[if lt IE 9]>
+       <%= stylesheet_link_tag    "ie" %>
+<![endif]-->
+<!--[if lte IE 8]>
+        <%= stylesheet_link_tag    "ie" %>
+<![endif]-->
+
+	<title>YaYo: experience web clothing</title>
+
+    <%=yield :head if content_for?(:head) %>
+
+</head>
+
+<body>
+
+<%= yield %>
+
+
+<%=render :partial=>'shared/footer' %>
+
+</body>
+</html>

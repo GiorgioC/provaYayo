@@ -1,0 +1,39 @@
+<%
+   @user = user if @user.nil?
+   %>
+
+<div id="reg" class="popup"  >
+
+	<div class="window">
+	<a href="#index.html" title="chiudi la finestra" class="close close_popup"><%=image_tag "icons/close.png",  :alt=>"close"%></a>
+	<h1><%=t(:registration_title)%></h1>
+	<p><%=t(:registration_subtitle)%></p>
+      <div class="login_error">
+            <%= render "shared/error_messages", :target => @user %>
+        </div>
+	<%= form_for(:user,:html=>{:class=>"registrazione"},:remote=>true, :url => registration_path(@user)) do |f| %>
+	<fieldset>
+	<legend><%=t(:registration_info)%></legend>
+
+
+	<% if session[:omniauth] %>
+          <p>
+            <%= f.label :email, t("email") %><br />
+            <%= f.text_field :email, :class => 'title'  %>
+          </p>
+          <p><%= submit_tag t("create"), :class => 'button primary' %></p>
+        <% else %>
+          <%= render 'shared/user_form', :f => f %>
+           <%= f.hidden_field :invitation_token %>
+          <%if @sender %>
+              <input type="hidden" name="s_e" value="<%=@sender%>">
+          <%end%>
+        <% end %>
+
+	</fieldset>
+
+    <%= render :partial => 'shared/privacy', :f => f %>
+	<p style ="text-align:center"><input type="submit" value="Registrami" class="bot"></p>
+	<%end%>
+	</div>
+</div>

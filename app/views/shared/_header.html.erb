@@ -1,0 +1,14 @@
+<div class="header"  id="header" data-hook style="background-image: url(<%=home.head_background.url(:top)%>)" >
+        <div class="top">
+            <a href="<%=root_path%>" title="<%=t(:homepage)%>"><%=image_tag home.logo.url(:top),:width=>"284",:height=>"92", :alt=>"yayo",:class=>"logo"%></a>
+            <p><%=t(:profile_welcome)  unless current_user.nil?%> <b><%=current_user.email unless current_user.nil?%></b><br><a href="#"><%=t(:profile_change)  unless current_user.nil?%></a>
+            <% if current_user and current_user.roles.where(:name => :admin).present? %>
+                <br><%=link_to t(:access_admin), admin_path %>
+                  <% unless @page.nil? %>
+                |
+                  <%= link_to t(:edit_page), "/editor" + request.path, id: "edit_link", data: { save_url: mercury_update_page_path(@page) } %>
+                      <%end%>
+             <%end%>
+            </p>
+        </div>
+</div>

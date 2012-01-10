@@ -1,0 +1,86 @@
+<% if !current_user %>
+    <%=render :partial=> "registration"%>
+     <%=render :partial=> 'forgot' %>
+<%else%>
+    <%=render :partial=> "loggedin"%>
+<%end%>
+
+<%=content_for :head do%>
+    <script language="javascript">
+        <% if !@user.invitation_token.nil? or @sender%>
+             $(document).ready(function(){
+                  $("#reg").show("slidein");
+                  //$("#reg").find("input[@name='user[email]'").val('<%=@user.email%>');
+             })  ;
+        <%end%>
+
+    </script>
+
+   <%end%>
+<div class="headerhp">
+
+    <a href="#registrazione.html" class="register" style="background-image: url(<%=@home.background.url%>)">
+
+<span><%=image_tag "welcomepage/click-here.png" ,:alt=>"click here"%><br>
+<%=image_tag "welcomepage/arrow6.png" ,:alt=>"arrow" ,:style=>"vertical-align:middle"%> <%=t(:wp_register_now)%></span>
+<%=image_tag @home.logo.url ,:alt=>"yayo", :class=>"logo"%>
+<h1><%=@home.title%></h1>
+</a>
+</div>
+
+<div class="main">
+
+	<div class="pagina">
+
+	<span style="float:right; padding-top:40px;"><%=image_tag @home.iconic.url, :alt=>"promozione"%></span>
+
+    <% if !current_user %>
+            <%= form_for(:user,:html=>{:class=>"enter"}, :url => user_session_path) do |f| %>
+
+                <% if flash[:alert] %>
+                    <div class="message error"><%= flash[:alert] %></div>
+                <% end %>
+                    <%= render "shared/error_messages", :target => @user %>
+                 <%= flash_messages %>
+
+            <p>
+                 <%= f.label :email, t("email") %>
+                 <%= f.email_field  :email, :size=>"20" ,:maxlength=>"90", :class => 'campo'%>
+                 <%= f.label :email, t("password") %>
+                 <%= f.password_field :password, :size=>"20" ,:maxlength=>"90", :class => 'campo'%>
+            </p>
+            <p>
+                <%= f.check_box :remember_me %>
+                <%= t(:remember_me) %></p>
+            <p style="text-align:right;"><%= f.submit t(:login_in), :class => 'bot'%> <br>
+            <%= link_to t(:forgot_password),"#passbar",:title=>t(:forgot_password),:class=>'login_pop boxy' %><br>
+                <%=render :partial=>'shared/socials'%>
+            </p>
+            <%end%>
+    <%else%>
+
+            <div><h2><%= t(:logged_in_as) %>: <%= current_user.email %></h2></div>
+
+          <p style="text-align:right;"></p>
+
+    <%end%>
+
+	</div>
+
+</div>
+
+<div class="experience">
+
+	<div class="exp">
+	<h2><%=image_tag "welcomepage/curva1.jpg", :alt=>"curva"%><a href="#">oggi su YAYOExperience</a><%=image_tag "welcomepage/curva2.jpg", :alt=>"curva"%></h2>
+
+	<ul>
+     <%@experiences.each do|exp|%>
+        <li><%=link_to exp.title, exp%></li>
+    <%end%>
+	</ul>
+	</div>
+
+
+</div>
+

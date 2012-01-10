@@ -1,0 +1,50 @@
+#nav {float: left; width: 220px; margin:20px 0px;
+font-family: Arial, Helvetica, sans-serif;
+		font-size:13px;
+		font-weight:400;
+		background-image: url(../img/cut.png);
+		background-position: 100% 0%;
+		background-repeat: no-repeat;
+		padding-top:15px;
+}
+
+#nav li a {background: #ccc; text-decoration: none;
+		background-color: #2a2a2a;
+		background-image:url(../img/bkg-menu-3.jpg);
+		background-position:0px 50%;
+		background-repeat: no-repeat;
+		display:block;
+		padding:7px 10px 7px 30px ;
+		margin:0px 0px 1px 0px;
+		color:#d1d1d1;
+}
+
+#nav li a:hover {
+background-color: #000000;
+background-image:url(../img/bkg-menu-33.png);
+}
+
+#nav li a.active {
+		color:#ffffff;
+		background-color: #000000;
+		background-image:url(../img/bkg-menu-34.png);
+}
+
+#nav li ul {display: none;}
+
+#nav li ul li a {
+		padding:6px 10px 6px 30px ;
+		background-color: #444444;
+		background-image:url(../img/bkg-menu-2.jpg);
+}
+
+#nav li ul li a:hover {
+		background-color: #5c5c5c;
+		color:#ffffff;
+		background-position:210px 50%;
+		background-repeat:no-repeat;
+		background-image:url(../img/arrow2.png);
+}
+
+		
+		

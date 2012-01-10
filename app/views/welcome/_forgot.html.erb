@@ -1,0 +1,40 @@
+<div id='passbar' style='display: none;' class="popup">
+  <div class="window">
+            <a href="#index.html" title="chiudi la finestra" class="close close_popup"><%=image_tag "icons/close.png",  :alt=>"close"%></a>
+            <h1><%=t(:forgot_password_title)%></h1>
+            <p><%=t(:forgot_password_desc)%></p>
+             <div class="request_password_error">
+                <%= render "shared/error_messages", :target => @user %>
+            </div>
+           <%=  form_for(User.new, :as => :user,:remote => true, :url => user_password_path,:html=>{:class=>"enter registrazione"}) do |f| %>
+                    <fieldset>
+
+               <%= f.label :email, t("email") %>
+               <%= f.email_field :email, :size=>"20" ,:maxlength=>"90", :class => 'campo'%>
+          </fieldset>
+              <p style ="text-align:center"> <%= f.submit t(:forgot_password_send), :class => 'bot'%></p>
+
+           <%end %>
+                     </div>
+</div>
+
+<div id='password_sent_ok' style='display: none;' class="popup">
+  <div class="window">
+            <a href="#index.html" title="chiudi la finestra" class="close close_popup"><%=image_tag "icons/close.png",  :alt=>"close"%></a>
+            <h1><%=t(:forgot_password_sent)%></h1>
+    <br>
+            <p><%=t(:forgot_password_sent_desc)%></p>
+    <br>
+             </div>
+</div>
+
+
+<div id='confirmation_sent_ok' style='display: none;' class="popup">
+  <div class="window">
+            <a href="#index.html" title="chiudi la finestra" class="close close_popup"><%=image_tag "icons/close.png",  :alt=>"close"%></a>
+            <h1><%=t("devise.confirmations.send_instructions")%></h1>
+    <br>
+            <p><%=t("devise.confirmations.send_paranoid_instructions")%></p>
+    <br>
+             </div>
+</div>

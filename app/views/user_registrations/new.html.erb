@@ -1,0 +1,43 @@
+<% @body_id = 'signup' %>
+
+
+
+<%= hook :signup do %>
+<div class="popup"  >
+	<div class="window">
+	<a href="index.html" title="chiudi la finestra" class="close"><%=image_tag "icons/close.png" ,:alt=>"close"%></a>
+	<h1>titolo della finestra</h1>
+	<p>introduzione alla finestra di dialogo</p>
+    <%= render "shared/error_messages", :target => @user %>
+	<%= form_for(:user,:url => registration_path(@user),:html=>{:class=>"registrazione"}) do |f| %>
+	<fieldset>
+	<legend>Dati personali</legend>
+
+	<% if session[:omniauth] %>
+          <p>
+            <%= f.label :email, t("email") %><br />
+            <%= f.text_field :email, :class => 'title'  %>
+          </p>
+          <p><%= submit_tag t("create"), :class => 'button primary' %></p>
+        <% else %>
+          <%= render 'shared/user_form', :f => f %>
+          <p><%= submit_tag t("create"), :class => 'button primary' %></p>
+        <% end %>
+
+	</fieldset>
+
+	<fieldset>
+	<legend>Accettazione Privacy e Condizioni</legend>
+
+	<p><label>Condizioni</label>
+	<textarea cols="20" rows="5" readonly="" style="width:100%">Lorem ipsum dolor sit amet, nec ad magna labore. Nec erat verterem menandri ea. Sit hinc viris cu, sit sumo urbanitas tincidunt cu. Omnis affert populo in quo, vim nullam equidem moderatius an, at populo posidonium necessitatibus nam.
+Quo decore electram ut, no nam eius alterum accusamus, scripta maluisset neglegentur ut ius. Appetere voluptaria qui ad, omittam pericula adipiscing ne has, sed ad dolore posidonium. Oratio gubergren te mel, amet fabellas scribentur ei quo. Duis quas ullamcorper pro te, ut mutat blandit vel. Voluptua facilisi tacimates usu ut, ei has facete fabellas conclusionemque.</textarea></p>
+	<p><label>Consenso</label>
+	<input type="radio" value="" checked=""> si | <input type="radio" value=""> no</p>
+	</fieldset>
+	<p style="text-align:center"><input type="submit" value="Registrami" class="bot"></p>
+	<% end %>
+	</div>
+    <div data-hook="login_extras"></div>
+</div>
+  <% end %>

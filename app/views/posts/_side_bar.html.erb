@@ -1,0 +1,20 @@
+ <%= content_for :sidebar do %>
+     <h1 class="lbl"><%=image_tag "store/arrow1.png", :width=>"11" ,:height=>"12" ,:alt=>"arrow" ,:class=>"arrow yellow"%>YAYO Experience</h1>
+                <%#render :partial=>"shared/social_link"%>
+                <!--<ul class="breadcrumbs">-->
+                    <!--<li class="lbl"><%=image_tag "store/arrow1.png" ,:width=>"11" ,:height=>"12",:alt=>"arrow",:class=>"arrow green"%> Sei in:</li>-->
+                    <!--<li><a href="index.inside.html">Vetrina</a></li>-->
+                    <!--<li><a href="brand.html">TAYLOR MADE</a></li>-->
+                    <!--<li><a href="brand.html">Mazze da Golf</a></li>-->
+                    <!--<li class="active"><a href="index_prodotto.html">Fairways</a></li>-->
+                <!--</ul>-->
+
+
+                <ul class="menucategoria">
+                    <%@tags.each do |tag|%>
+                        <li class="<%="active" if params[:tag_name]==tag.name%>"><a href="<%=tag_posts_url(tag.name)%>"><%=tag.name%></a></li>
+                    <%end%>
+                </ul>
+
+
+ <% end %>

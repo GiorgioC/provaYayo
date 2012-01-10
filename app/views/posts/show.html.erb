@@ -1,0 +1,10 @@
+   
+ <%=render :partial=>"side_bar"%>
+
+<%= render :partial => @post,:locals=>{:detail=>true} %>
+
+<% if @post.commentable == 1 %>
+<div id="comments">
+  <%= raw disqus_thread %>
+</div>
+<% end %>

@@ -1,0 +1,32 @@
+<div class="article <%="dett" if detail%>">
+  <p class="rif"><%= post.published_at.strftime("%A %d.%m.%Y") %>
+    <% unless post.user.nil? or post.user.display_name.blank? %> | scritto da
+        <a href="#"><%= post.user.display_name %></a>
+    <% end %></p>
+
+  <div class="abstract">
+    <span class="image"><%= image_tag post.immagine.url(:original), :alt=>post.title %></span>
+
+    <h1><%= link_to_unless_current (post.title == '' ? '[Untitled]' : h(post.title)), post, {:title => post.title, :alt => "Link to #{post.title}"} %></h1>
+
+    <p>
+      <%= raw post.body_raw if detail %>
+      <%= raw post.excerpt  unless detail %>
+    </p>
+
+    <p class="continua"><%= link_to '...[continua]', post, {:title => post.title, :alt => "Link to #{post.title}"}  unless detail%></p>
+  </div>
+  <p class="commenti"> | <%= link_to "commenti", post_path(post, :anchor => "disqus_thread") %>
+    <!-- AddThis Button BEGIN -->
+<span class="addthis_toolbox addthis_default_style " addthis:title="{<%= h(post.title) %>}" addthis:url="{<%= "#{posts_url}/#{post.permalink}" %>}">
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</span>
+  </p>
+</div>
+
+<%= raw disqus_comment_counts %>

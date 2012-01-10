@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag 'formtastic', 'formtastic_changes'  %>
+<%= javascript_include_tag 'admin/spree_welcomepage' %>
+<%= render "shared/error_messages", :target => @object %>
+<h1><%= t("editing_welcome_page") %></h1>
+<div class="toolbar">
+
+               <%= button_link_to t(:publish), admin_home_resource_publish_path(@object) %>
+               <%= button_link_to_function t(:preview), "preview()" %>
+               <%= button_link_to_function t("actions.update"), "$('form.home_resource').submit()" %>
+   </div>
+<div class="page clear">
+<div class="sidebar">
+      <h3>Seleziona operazione</h3>
+     <ul>
+       <li><a href="#" class="tab-selector" onclick="$('.tabs').hide(); $('#tab-title').show('fadein');return false;"><span><%=t(:claim)%></a></span></li>
+
+     <%[:background,:logo,:iconic,:leaderboard,:head_background].each do|xs|%>
+              <li><a href="#" class="tab-selector" onclick="$('.tabs').hide(); $('#tab-<%=xs%>').show('fadein');return false;"><span><%=t(xs)%></a></span></li>
+     <%end%>
+         </ul>
+    </div>
+
+         <div class="content">
+
+
+
+               <br><br>
+               <%= semantic_form_for([:admin, @object]) do |f| %>
+
+                     <%= render :partial => "form", :locals => { :f => f  } %>
+            <% end %>
+
+    </div>
+
+                 </div>
+
+
+

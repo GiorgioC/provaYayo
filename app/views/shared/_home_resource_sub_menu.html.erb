@@ -1,0 +1,6 @@
+<% content_for :sub_menu do %>
+  <ul id="sub_nav" data-hook="admin_home_resource_sub_tabs">
+    <%= tab :home_resources, :label => t(:home_resources), :match_path => '/home_resources' %>
+    <%= tab :articles, :label => t(:articles), :match_path => '/articles' %>
+  </ul>
+<% end %>

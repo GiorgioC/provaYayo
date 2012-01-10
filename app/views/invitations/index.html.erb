@@ -1,0 +1,140 @@
+<% content_for :title, "Invita un amico e ricevi uno sconto per ogni registrazione" %>
+<% content_for :head do %>
+     <script src="http://connect.facebook.net/it_IT/all.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function(){$(".close_popup").click(function(){$(".popup").hide()})})
+        function showInvite(){
+                    $("#invite").show();
+                    $("#invitation_recipient_email").focus();
+        }
+        function ConnectToFacebook() {
+                       // Facebook already initialized
+                       FB.getLoginStatus(function (response) {
+                           if (response.session == null) {
+                               // not logged
+                               FB.login(handleSessionResponse1);
+                           }
+                       });
+                   };
+
+
+        function openInviteBox() {
+
+			FB.ui(
+		  {
+			  method: 'send',
+			  name: 'Iscriviti a YAYO.com',
+			  link: '<%= from_facebook_url%>?e=<%=current_user.email%>',
+			  picture: '<%=root_url%>store/logo.png',
+			  caption: 'Iscriviti a YAYO.com',
+              <%if @friends %>
+              to:
+                      [
+                        <%@friends.each do|friend|%>
+                            '<%=friend.identifier%>',
+                        <%end%>
+                      ''
+                      ]
+              ,
+              <%end%>
+			  description: "Al primo acquisto del tuo amico riceverai..."
+		  });
+
+
+		}
+
+
+      FB.init({appId: '<%=@api_key%>', xfbml: true, cookie: true});
+
+        $(document).ready(function(){
+                    $(".connetti").click(function(){
+                        openInviteBox();
+                    });
+
+                    $(".popup").ajaxSend(function(){
+
+                         $(".popup").hide("fadeout");
+                        $.blockUI({
+                            message:"<img src='/assets/icons/ajax-loader.gif'><br>Invio messaggio in corso",
+                            css:{"z-Index":1000000,
+                            border: 'none',
+                            padding: '15px',
+                            backgroundColor: '#000',
+                            '-webkit-border-radius': '10px',
+                            '-moz-border-radius': '10px',
+                            opacity: .8,
+                            color: '#fff'
+                            }
+                            });
+
+                    }).ajaxComplete(function(){
+                             $.unblockUI();
+                             $("#invitation_recipient_email").val("");
+                    })
+            });
+
+
+
+
+
+
+    </script>
+<%end%>
+<h1 class="lbl"><%=image_tag src="store/arrow1.png",:width=>"11" ,:height=>"12",:alt=>"arrow",:class=>"arrow yellow"%>Invita un Amico</h1>
+<p class="intro">Lorem ipsum dolor sit amet Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore ver</p>
+
+<div id='invite' style='display: none' class="popup">
+  <div class="window"  >
+    <a href="#index.html" title="chiudi la finestra" class="close close_popup"><%=image_tag "icons/close.png",  :alt=>"close"%></a>
+    <h1>Inserire i dati per procedere</h1>
+     <div class="invite_error">
+                <%= render "shared/error_messages", :target => @invitation %>
+     </div>
+<%= form_for @invitation,:remote=>true,:html=>{:class=>"enter registrazione"} do |f| %>
+  <p>
+    <%= f.label :recipient_email, "Indirizzo email di un tuo amico" %><br />
+    <%= f.text_field :recipient_email %>
+  </p>
+  <p><%= f.submit "Invita",:class => 'bot'  %></p>
+<% end %>
+    </div>
+</div>
+<div id='invite_sent_ok' style='display: none;' class="popup">
+  <div class="window">
+            <a href="#index.html" title="chiudi la finestra" class="close close_popup"><%=image_tag "icons/close.png",  :alt=>"close"%></a>
+            <h1><%=t("invitation.sent")%></h1>
+    <br>
+            <p><%=t("invitation.info")%></p>
+    <br>
+             </div>
+</div>
+
+
+<br>
+<div class="Txttab">
+  <fieldset class="generic">
+              <legend>Amici Invitati</legend>
+              <p>lore ipsum </p>
+
+            <table class="app">
+              <thead>
+              <tr>
+
+                <th>Persona Invitata</th>
+                <th>Data</th>
+                <th>Hanno Acquistato?</th>
+              </tr>
+              </thead>
+              <tbody id="list_body">
+                <%=render :partial=>"list", :locals=>{:invitations=>@invitations}%>
+              </tbody>
+            </table>
+        <div><p>Invita con:</p><br><%= link_to_function "Email", "showInvite()", :class => 'bot' %> <br><br><a href="#" class="connetti bot">Facebook</a> </div>
+      </fieldset>
+  </div>
+
+<div id="fb-root"></div>
+
+
+
+

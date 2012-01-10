@@ -1,0 +1,20 @@
+<% content_for :promo do%>
+        <%cache(:promo_top) do%>
+            <%=render :partial=>"shared/promo",:locals=>{:home=>HomeResource.where(:preview=>false).first}%>
+        <%end%>
+<%end%>
+<%if @todays_promos.count>0%>
+<h1 class="lbl"><%=image_tag "store/arrow1.png",:width=>"11",:height=>"12",:alt=>"arrow",:class=>"arrow yellow" %>da oggi su yayo</h1>
+			<p class="intro">Lorem ipsum dolor sit amet Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore ver</p>
+
+
+            <%@todays_promos.each do|promo|%>
+                <div class="box double">
+                    <p><%=image_tag "store/clock.png" ,:width=>"23",:height=>"23" ,:alt=>promo.name %>
+                    chiude fra <%=distance_of_time_in_words_to_now(promo.expires_at, true)%> <a href="brand.html" title="vai al dettaglio">entra</a></p>
+                    <a href="brand.html"><%=image_tag promo.leaderboard.url,:width=>"672",:height=>"174",:alt=>"marca",:class=>"adv"%></a>
+                </div>
+             <%end%>
+<%else%>
+    <p class="intro">Nessuna offerta oggi!</p>
+<%end%>

@@ -1,0 +1,94 @@
+
+<%= render :partial => 'sub_menu' %>
+
+<div class='toolbar'>
+  <ul class='actions'>
+    <li id="new_ot_link">
+      <%= button_link_to t("cms.new_post"), new_object_url,
+                         {:remote => true,
+                         'data-update' => 'new-post',
+                         :icon => 'add'} %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+
+<h1><%= "#{t('posts')}" %></h1>
+
+<%= image_tag "spinner.gif", :plugin=>"spree", :style => "display:none", :id => 'busy_indicator' %>
+<div id="new-post"></div>
+
+<table class="index">
+  <tr>
+    <%= hook :admin_posts_index_headers do %>
+      <th><%=sort_link @search,:title, t("cms.title") %></th>
+      <th><%= t("cms.tags") %></th>
+      <th><%= sort_link @search,:date, t("cms.date") %></th>
+    <% end %>
+    <th>
+      <%= hook :admin_posts_index_header_actions %>
+    </th>
+  </tr>
+
+<% @collection.each do |post| %>
+  <%- locals = {:post => post} -%>
+  <tr>
+    <%= hook :admin_posts_index_rows, locals do %>
+      <td><%= link_to h(post.title), [:edit,:admin,post] %> (<%= post.is_active == 1 ? t("cms.published") : t("cms.draft") %>) </td>
+      <td><%= post.tag_list %></td>
+      <td><%= (post.published_at.blank? ? post.updated_at : post.published_at).strftime("%B %d, %Y at %I:%M%p") %></td>
+      <td class="actions">
+        <%= hook :admin_pages_index_row_actions, locals do %>
+          <%= link_to_edit post %>
+          &nbsp;
+          <%= link_to_delete post %>
+        <% end %>
+      </td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<%= paginate @collection%>
+
+<%= content_for :sidebar do %>
+
+  <%= form_for :post do |f| %>
+    <div class="box">
+      <h3><%= t(:search) %></h3>
+
+      <%- locals = {:f => f} -%>
+      <%= hook :admin_posts_index_search, locals do %>
+        <p>
+          <label><%= t("cms.title") %></label><br />
+          <%= f.text_field :title, :size => 15 %>
+        </p>
+
+        <label><%= t("cms.published_date_range") %></label><br />
+        <div class="yui-g date-range-filter">
+          <div class="yui-u sub-field first">
+            <%= f.text_field :published_at, :class => 'datepicker' %><br />
+            <label class="sub"><%= t("start") %></label>
+          </div>
+
+        </div>
+
+
+        <p>
+          <%= f.check_box :is_active, {:style => "vertical-align:middle;"}, "1", ""  %>
+          <label>
+            <%= t("cms.show_only_published_posts") %>
+          </label>
+        </p>
+      <% end %>
+
+      <%= hook :admin_posts_index_search_buttons, locals do %>
+        <p class="form-buttons">
+          <%= button t("search") %>
+        </p>
+      <% end %>
+    </div>
+  <% end %>
+
+<% end %>

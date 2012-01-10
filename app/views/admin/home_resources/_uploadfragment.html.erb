@@ -1,0 +1,39 @@
+
+   <div class="gray tabs" id="tab-<%=scope%>">
+     <h3 style="margin-left:20px"><%= t(scope)%></h3>
+    <table class="center" style="border-collapse: collapse">
+        <tbody><tr>
+          <td>
+                <div class="profile-image">
+                        <%=t(:wp_no_image) if @object.send("#{scope}_file_name").nil?%>
+                        <%= image_tag  @object.send(scope).url(:thumb) unless @object.send("#{scope}_file_name").nil?%>
+                <div>
+               <div class="image-reset">
+               <%= link_to t(:wp_reset_image),admin_home_resource_clearimage_path(@object,scope) ,:format=>:json, :confirm => t(:wp_confirm), :method => :delete, :remote=>true,:class=>"ajax-#{scope}"  unless @object.send("#{scope}_file_name").nil?%>
+               </div>
+               </div>
+                    </div>
+          </td>
+          <td>
+          <div class="">
+            <div class="">
+              <div id=""><strong><%=t(:wp_upload_action,:size=>size)%> </strong>
+              <%= f.input scope , :as=>:file,:label=>false %>
+              </div>
+           </div>
+            <div>
+              <strong><%=t(:wp_content_type,:content=>"jpg o png")%></strong>
+              <br> <br>
+              <div style="float:right">
+                <%= button t("actions.update"), nil, "submit"%>
+                <%= t("or") %> <%= link_to t("actions.cancel"), admin_home_resources_path %>
+                </div>
+            </div>
+
+
+          </div>
+          </td>
+        </tr>
+        </tbody>
+    </table>
+    </div>

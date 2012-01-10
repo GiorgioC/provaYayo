@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+
+
+
+  <head data-hook="inside_head">
+    <%= render 'shared/head' %>
+  </head>
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+
+
+
+    <%cache(:header) do%>
+        <%= render :partial=>"shared/header",locals:{:home=>HomeResource.where(:preview=>false).first} %>
+   <%end%>
+
+
+    <div class="menu">
+        <div class="menuinside" >
+            <div id="nav-bar" data-hook>
+                   <%= render 'shared/nav_bar'  unless current_user.nil? %>
+            </div>
+          <% if  !current_user.nil?                                     %>
+                <p class="shopper"><a href="#carrello1.html"><%=image_tag "store/shopper.png" , :width=>"50",:height=>"61",:alt=>"shopper"%><%=t(:your_shopper)%></a><span>  <%=t(:products)%>: <b>00</b></span></p>
+                <p class="logout"><a  href="<%=destroy_user_session_path%>"><%=image_tag  "icons/close.png" ,:width=>"13", :height=>"13",:alt=>""%><%=t(:logout)%></a></p>
+          <% end %>
+        </div>
+
+    </div>
+
+    <div class="main">
+
+        <div class="pagina">
+
+            <% if content_for?(:promo) %>
+                <div class="promo">
+                    <%= yield :promo %>
+                </div>
+            <%end%>
+
+
+            <div id="wrapper" data-hook>
+               <div id="sidebar" class="braccio" data-hook>
+              <% if content_for?(:sidebar) %>
+
+                  <%= yield :sidebar %>
+
+              <% else %>
+                    <%=render :partial=>"shared/side_bar"%>
+              <% end %>
+                 </div>
+
+              <div id="content" class="contenuto" data-hook>
+                <%= breadcrumbs(@taxon) %>
+                <%= flash_messages %>
+                <%= yield %>
+              </div>
+            </div>
+     </div>
+
+        <%=render :partial=>'shared/footer'%>
+    </div>
+    <%= render 'shared/google_analytics' %>
+  </body>
+</html>

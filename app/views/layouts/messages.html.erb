@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+
+
+
+  <head data-hook="inside_head">
+    <%= render 'shared/head' %>
+  </head>
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+
+    <div class="header"  id="header" data-hook style="background-image: url(/assets/store/bkg-head.jpg);" data-hook>
+        <div class="top">
+            <a href="<%=root_path%>" title="<%=t(:homepage)%>"><%=image_tag "store/logo.png",:width=>"284",:height=>"92", :alt=>"yayo",:class=>"logo"%></a>
+            <p><%=t(:profile_welcome)  unless current_user.nil?%> <b><%=current_user.email unless current_user.nil?%></b><br><a href="#"><%=t(:profile_change)  unless current_user.nil?%></a></p>
+        </div>
+    </div>
+
+
+
+    <div class="main">
+
+        <div style="min-height:500px;background-color:#ffffff">
+                <%= yield %>
+        </div>
+        <div id="footer" data-hook>
+            <%=render :partial=>'shared/footer'%>
+        </div>
+      </div>
+    <%= render 'shared/google_analytics' %>
+  </body>
+</html>

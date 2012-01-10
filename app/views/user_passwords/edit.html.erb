@@ -1,0 +1,33 @@
+<div id="change_password" class="popup"  >
+
+	<div class="window">
+	<a href="<%=login_path%>" title="chiudi la finestra" class="close close_popup"><%=image_tag "icons/close.png",  :alt=>"close"%></a>
+	<h1><%=t(:change_my_password)%></h1>
+
+      <div class="login_error message error">
+            <%= render "shared/error_messages", :target => @user %>
+        </div>
+	<%= form_for(@user,:html=>{:method=>:put,:class=>"registrazione"}, :url => user_password_path) do |f| %>
+	<fieldset>
+	<legend><%=t(:change_my_password)%></legend>
+          <p>
+            <%= f.label :password%><br />
+            <%= f.password_field :password, :class => 'title'  %>
+          </p>
+          <p>
+            <%= f.label :password_confirmation%><br />
+            <%= f.password_field :password_confirmation, :class => 'title'  %>
+          </p>
+          <p>
+            <%= submit_tag t("update_password"), :class => 'button bot primary' %>
+          </p>
+            <%= f.hidden_field :reset_password_token %>
+     </fieldset>
+
+	<%end%>
+	</div>
+
+
+
+</div>
+

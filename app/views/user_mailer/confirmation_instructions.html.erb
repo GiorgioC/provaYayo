@@ -1,0 +1,9 @@
+<p>Benvenuto <%= @resource.email %>!</p>
+
+<p>Puoi attivare il tuo account cliccando sul link sottostante:</p>
+
+<p><%= link_to 'Conferma', confirmation_path(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+
+
+<br>
+Il team di YAYO.com

@@ -1,0 +1,7 @@
+ <% for invitation in invitations %>
+                <tr>
+                  <td><%= invitation.recipient_email %></td>
+                  <td><%= invitation.sent_at.strftime("%d.%m.%Y")  %></td>
+                  <td><%= ((invitation.recipient_bought?)?"si":"no")%></td>
+                </tr>
+<% end %>

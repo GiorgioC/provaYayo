@@ -1,0 +1,148 @@
+h1{
+    padding-top: 10px;
+font-size: 24px;
+font-style: normal;
+font-weight: normal;
+font-family: "Proxima_Nova", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+text-shadow: 0 1px 2px rgba(255, 255, 255, 0.25);
+}
+table.center{
+         margin-left: auto;
+margin-right: auto;
+}
+
+.gray{
+    min-height: 253px;
+    border-top: 1px solid #B3B3B3;
+    background-color: #F2F2F2;
+    border: 1px solid #CCC;
+    display: block;
+}
+
+  .formtastic strong {
+font-weight: bold;
+font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.formtastic .inline-errors {
+background: #910F0F;
+color: white;
+
+position: relative;
+margin: 0 0 10px -10px;
+border-bottom: 1px solid white;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+padding: 10px;
+
+line-height: 1.25;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
+text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.25) inset;
+
+}
+
+.toolbar{
+    float:left;
+}
+
+.formtatic{
+    font: 12px/1.5 "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+text-rendering: optimizeLegibility;
+-webkit-font-smoothing: antialiased;
+color: #444;
+}
+.inputs label{
+    font: 12px/1.5 "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+     font-weight: bold;
+}
+.formtastic input, textarea  {
+    font: 16px/1.5 "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal; font-size: 14px; padding: 5px 10px 6px;
+    background: url("welcomepage/bg-input-focus.png") repeat-x 0px 0px;
+    background: white url("welcomepage/bg-input.png") repeat-x 0px 0px;
+    border-top: solid 1px #aaaaaa; border-left: solid 1px #aaaaaa; border-bottom:
+    solid 1px #cccccc; border-right: solid 1px #cccccc;
+    -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; outline: 0; line-height: 1.25; }
+
+.formtastic .input .label {
+    font: 12px/1.5 "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    display: block;
+    float:none;
+    font-weight: bold;
+}
+::-moz-selection { background: #236da6; color: green; text-shadow: none; }
+
+::selection { background: #236da6; color: green; text-shadow: none; }
+
+.sidebar {
+float: left;
+display: inline;
+margin-right: 10px;
+margin-left: 10px;
+width: 220px;
+position: relative;
+
+}
+
+.page {
+    float: none;
+}
+
+.content {
+float: left;
+display: inline;
+width: 780px;
+left: 220px;
+padding: 20px 0 100px;
+min-height: 310px;
+}
+
+.sidebar ul li a span {
+position: relative;
+display: block;
+margin-right: -8px;
+
+background: url(welcomepage/icons.png) 170px -256px no-repeat;
+line-height: 16px;
+}
+
+
+.sidebar ul li a:focus, .sidebar ul li a:hover, .sidebar ul li a.current:hover {
+color: #111;
+}
+
+.sidebar ul li a:hover, a:active, .sidebar ul li a.current {
+color: #2B2B2B;
+}
+ .sidebar ul li a:link, .sidebar ul li a:visited {
+font-weight: bold;
+font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+color: #444;
+}
+
+sidebar ul li a {
+display: block;
+margin: 0 0 3px -12px;
+padding: 3px 12px;
+-webkit-border-radius: 24px;
+-moz-border-radius: 24px;
+border-radius: 24px;
+}
+
+
+.sidebar ul {
+list-style: none;
+}
+.sidebar h3 {
+padding-top: 0;
+padding-bottom: 6px;
+font-weight: bold;
+font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+font-size: 15px;
+line-height: 18px;
+    width:200px;
+color: #999;
+}

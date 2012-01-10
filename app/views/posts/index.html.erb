@@ -1,0 +1,43 @@
+<%= content_for :head do %>
+  <link rel="alternate" type="application/rss+xml" title="<%= t("posts") %> RSS" href="<%= posts_url(:format => 'rss') %>" />
+<% end %>   
+
+
+<%=render :partial=>"side_bar"%>
+
+<%
+   #controllo dell'autenticazione
+   %>
+<%if current_user.nil?%>
+
+     <%=render :partial=>"welcome/registration", :locals=>{user:User.new } %>
+    <%= javascript_include_tag "welcomepage.js" %>
+    <script type="text/javascript">
+            $(document).ready(function(){
+               $("#reg").show("fadein");
+            });
+    </script>
+<%end%>
+  <h1 class="lbl">
+			<%=image_tag "store/arrow1.png", :width=>"11",:height=>"12" ,:alt=>"arrow" ,:class=>"arrow yellow"%>YAYO Experience</h1>
+
+<%if params[:tag_name].nil?%>
+    <p class="emphasis"><span>Benvenuto su YAYO Experience</span><br>
+    Qui potrai trovare spunti, informazioni, idee e tante offerte sul mondo della moda, ma non solo. Non perderne una!<br>
+    Leggi, commenta, dì la tua...ed invita i tuoi amici!</p>
+<%else%>
+    <p class="emphasis"><span><%=params[:tag_name]%></span><br>
+
+<%end%>
+
+
+
+<div class="navigazione">
+<p><b><%=@total%></b> Articoli</p>
+    <%= paginate @posts  %>
+</div>
+<% for post in @posts %>
+    <%=render :partial => post,:locals=>{:detail=>false} %>
+<% end %>
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4ed900c6579151de"></script>
